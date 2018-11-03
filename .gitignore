@@ -47,3 +47,6 @@ devel/*
 .catkin_workspace
 cmake-build-debug
 
+.ipynb_checkpoints
+*.ipynb
+
