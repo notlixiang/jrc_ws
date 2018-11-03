@@ -19,6 +19,7 @@ add_service_files(
     ### 所有的 .srv 文件
     reco.srv
     pose.srv
+    rgbd.srv
 )
 
 # Generate added messages and services with any dependencies listed here
