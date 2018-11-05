@@ -20,6 +20,9 @@ add_service_files(
     reco.srv
     pose.srv
     rgbd.srv
+    call_grasp.srv
+    call_twist.srv
+
 )
 
 # Generate added messages and services with any dependencies listed here

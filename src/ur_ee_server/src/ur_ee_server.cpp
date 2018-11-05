@@ -1,7 +1,3 @@
-
-#include "twist_srv/call_twist.h"
-#include "grasp_srv/call_grasp.h"
-
 #include "ur_msgs/IOStates.h"
 #include "ur_msgs/SetIO.h"
 #include "ur_msgs/SetIORequest.h"
@@ -15,6 +11,9 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/String.h>
 #include <string>
+
+#include "jrc_srvs/call_twist.h"
+#include "jrc_srvs/call_grasp.h"
 
 #define USHORT unsigned short int
 #define BYTE unsigned char
@@ -37,8 +36,8 @@ using namespace std;
 double ee_angle_send = 0;
 bool ur_grasped = false;
 
-bool call_ur_twist(twist_srv::call_twist::Request &req,
-                   twist_srv::call_twist::Response &res) {
+bool call_ur_twist(jrc_srvs::call_twist::Request &req,
+                   jrc_srvs::call_twist::Response &res) {
 //  ros::NodeHandle n;
 
 //  ROS_INFO("%s",ser.available()?"available":"not available");
@@ -69,8 +68,8 @@ bool call_ur_twist(twist_srv::call_twist::Request &req,
 //    }
 //}
 
-bool call_ur_grasp(grasp_srv::call_grasp::Request &req,
-                   grasp_srv::call_grasp::Response &res) {
+bool call_ur_grasp(jrc_srvs::call_grasp::Request &req,
+                   jrc_srvs::call_grasp::Response &res) {
     ros::NodeHandle n;
     ros::ServiceClient client =
             n.serviceClient<ur_msgs::SetIO>("/ur_driver/set_io");

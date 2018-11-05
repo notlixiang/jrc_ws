@@ -63,14 +63,25 @@ link_directories(${OpenCV_LIBRARY_DIR})
 
 #add_definitions(${PCL_DEFINITIONS})
 
-
 add_executable(jrc_main_node
 	src/jrc_main.cpp
 	src/AGV.cpp
 	)
+	
+	
+add_dependencies(jrc_main_node jrc_srvs_gencpp)
+
 
 target_link_libraries(jrc_main_node
 	${catkin_LIBRARIES}
 	${OpenCV_LIBS}
 	${PCL_LIBRARIES}
 	)
+	
+	
+	
+	
+	
+	
+	
+	

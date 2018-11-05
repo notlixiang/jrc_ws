@@ -63,6 +63,7 @@ link_directories(${OpenCV_LIBRARY_DIR})
 add_executable(pose_server_node
         src/pose_server.cpp
         )
+add_dependencies(pose_server_node jrc_srvs_gencpp)
 
 target_link_libraries(pose_server_node
         ${catkin_LIBRARIES}
