@@ -11,7 +11,15 @@ sudo apt-get update.
 sudo apt-get install librealsense2-dev
 //  Wait Until Finished
 ```
-
+## Developer
+agv_server: 黄先群，陈斌斌， 苗浩原；  
+hangeye_calib;  杨理欣；   
+jrc_main:  杨理欣，马灼明；   
+jrc_srvs:  所有的.srv 和 .msg， 大家一起维护，按照规范来；   
+pose_server: 马灼明，张昊若，倪培远；   
+reco_server: 马灼明，姜文俊；   
+universal_robot + ur_server : 孙明镜， 李想， 杨刚刚；   
+ur_ee_server: 李想；    
 ## Build
 
 ```
