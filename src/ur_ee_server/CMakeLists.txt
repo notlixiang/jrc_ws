@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
 	message_generation
   	serial
   	jrc_srvs
+  	ur_msgs
 )
 
 #add_message_files(
@@ -41,6 +42,8 @@ include_directories(
 
 add_executable(ur_ee_server_node src/ur_ee_server.cpp)
 add_dependencies(ur_ee_server_node jrc_srvs_gencpp)
+add_dependencies(ur_ee_server_node ur_msgs_gencpp)
+
 target_link_libraries(ur_ee_server_node
   ${catkin_LIBRARIES}
 )
