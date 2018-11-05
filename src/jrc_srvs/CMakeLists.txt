@@ -22,6 +22,7 @@ add_service_files(
     rgbd.srv
     call_grasp.srv
     call_twist.srv
+	grasp.srv
 
 )
 
