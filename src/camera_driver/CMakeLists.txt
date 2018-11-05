@@ -73,6 +73,9 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_executable(realsense2_driver src/realsense2_driver.cpp)
 add_executable(realsense2_server src/realsense2_server.cpp)
 
+add_dependencies(realsense2_driver jrc_srvs_gencpp)
+add_dependencies(realsense2_server jrc_srvs_gencpp)
+
 target_link_libraries(realsense2_driver
    ${catkin_LIBRARIES}
    ${OpenCV_LIBS}
