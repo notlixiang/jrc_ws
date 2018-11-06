@@ -25,6 +25,7 @@ String outString = stringDwonToUp + inString + stringDwonToUp;
 //true 1
 //false 0
 int sucked = 0;
+bool serialflag=false;
 
 void setup()
 {
@@ -51,6 +52,9 @@ void loop()
     //    Serial.print("没有吸上\n");
     sucked = 0;
   }
+
+if(serialflag)
+{  
   char inChar = '\n';
   while (Serial.available() > 0) {
     inChar = Serial.read();
@@ -59,14 +63,17 @@ void loop()
     // and add it to the string:
     inString += (char)inChar;
   }
-
   sscanf(inString.c_str(), "ANGLEUTD%dANGLEUTD", &ee_angle_int);
   ee_angle = ee_angle_int / 10;
   myservo.write(ee_angle / 1.0);
+}
+serialflag=!serialflag;
+  
   outString = "";
   outString += stringDwonToUp;
   char temp_str[20];
-  outString += itoa((int)myservo.read() * 10 * 1.0, temp_str, 10);
+  //outString += itoa((int)myservo.read() * 10 * 1.0, temp_str, 10);  
+  outString += itoa((int)ee_angle_int, temp_str, 10);
   outString += stringDwonToUp;
   outString += stringSucked;
   outString += itoa((int)sucked, temp_str, 10);
