@@ -1,0 +1,5 @@
+ur_ee_server
+/home/sirius/ws/jrc_ws/devel/.private/ur_ee_server/share/ur_ee_server/cmake/ur_ee_serverConfig-version.cmake /home/sirius/ws/jrc_ws/devel/share/ur_ee_server/cmake/ur_ee_serverConfig-version.cmake
+/home/sirius/ws/jrc_ws/devel/.private/ur_ee_server/share/ur_ee_server/cmake/ur_ee_serverConfig.cmake /home/sirius/ws/jrc_ws/devel/share/ur_ee_server/cmake/ur_ee_serverConfig.cmake
+/home/sirius/ws/jrc_ws/devel/.private/ur_ee_server/lib/pkgconfig/ur_ee_server.pc /home/sirius/ws/jrc_ws/devel/lib/pkgconfig/ur_ee_server.pc
+/home/sirius/ws/jrc_ws/devel/.private/ur_ee_server/lib/ur_ee_server/ur_ee_server_node /home/sirius/ws/jrc_ws/devel/lib/ur_ee_server/ur_ee_server_node

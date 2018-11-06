@@ -1,0 +1,6 @@
+camera_driver
+/home/sirius/ws/jrc_ws/devel/.private/camera_driver/share/camera_driver/cmake/camera_driverConfig.cmake /home/sirius/ws/jrc_ws/devel/share/camera_driver/cmake/camera_driverConfig.cmake
+/home/sirius/ws/jrc_ws/devel/.private/camera_driver/share/camera_driver/cmake/camera_driverConfig-version.cmake /home/sirius/ws/jrc_ws/devel/share/camera_driver/cmake/camera_driverConfig-version.cmake
+/home/sirius/ws/jrc_ws/devel/.private/camera_driver/lib/pkgconfig/camera_driver.pc /home/sirius/ws/jrc_ws/devel/lib/pkgconfig/camera_driver.pc
+/home/sirius/ws/jrc_ws/devel/.private/camera_driver/lib/camera_driver/realsense2_server /home/sirius/ws/jrc_ws/devel/lib/camera_driver/realsense2_server
+/home/sirius/ws/jrc_ws/devel/.private/camera_driver/lib/camera_driver/realsense2_driver /home/sirius/ws/jrc_ws/devel/lib/camera_driver/realsense2_driver

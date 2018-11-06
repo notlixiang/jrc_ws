@@ -1,0 +1,8 @@
+prefix=/home/sirius/ws/jrc_ws/jrc_ws/devel
+
+Name: ur_ee_server
+Description: Description of ur_ee_server
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/sirius/ws/jrc_ws/jrc_ws/devel/lib 
+Requires: std_msgs message_runtime serial

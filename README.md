@@ -15,7 +15,10 @@
     sudo apt-get update.  
     sudo apt-get install librealsense2-dev
     //  Wait Until Finished
-    ```
+    ```  
+    
+## Notice
+- 2018.11.06    Motion Planing部分需要单独catkin build， 与主工程分开， jrc_ws内部架构不变 （孙明静）
 
 ## Developer
 agv_server: 黄先群，陈斌斌， 苗浩原；  

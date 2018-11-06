@@ -1,0 +1,2 @@
+camera_driver:jrc_main:jrc_srvs:pose_server:universal_robot/universal_robot:universal_robot/ur10_moveit_config:universal_robot/ur3_moveit_config:universal_robot/ur5_moveit_config:universal_robot/ur_bringup:universal_robot/ur_description:universal_robot/ur_driver:universal_robot/ur_gazebo:universal_robot/ur_kinematics:universal_robot/ur_msgs:ur_ee_server
+-DCATKIN_DEVEL_PREFIX=/home/sirius/ws/jrc_ws/jrc_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sirius/ws/jrc_ws/jrc_ws/install -G Unix Makefiles
