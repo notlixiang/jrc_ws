@@ -1,8 +1,0 @@
-prefix=/home/sirius/ws/jrc_ws/jrc_ws/devel
-
-Name: jrc_main
-Description: Description of jrc_main
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/sirius/ws/jrc_ws/jrc_ws/devel/lib 
-Requires: 

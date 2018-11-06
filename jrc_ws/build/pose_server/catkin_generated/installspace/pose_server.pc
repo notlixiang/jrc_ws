@@ -1,8 +1,0 @@
-prefix=/home/sirius/ws/jrc_ws/jrc_ws/install
-
-Name: pose_server
-Description: Description of pose_server
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/sirius/ws/jrc_ws/jrc_ws/install/lib 
-Requires: 

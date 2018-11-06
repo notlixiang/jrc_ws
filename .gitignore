@@ -41,6 +41,11 @@ CTestTestfile.cmake
 *.out
 *.app
 
+
+build
+devel
+
+
 build/*
 devel/*
 .idea

@@ -1,2 +1,0 @@
-set(jrc_srvs_MESSAGE_FILES "")
-set(jrc_srvs_SERVICE_FILES "/home/sirius/ws/jrc_ws/jrc_ws/src/jrc_srvs/srv/reco.srv;/home/sirius/ws/jrc_ws/jrc_ws/src/jrc_srvs/srv/pose.srv;/home/sirius/ws/jrc_ws/jrc_ws/src/jrc_srvs/srv/rgbd.srv;/home/sirius/ws/jrc_ws/jrc_ws/src/jrc_srvs/srv/call_grasp.srv;/home/sirius/ws/jrc_ws/jrc_ws/src/jrc_srvs/srv/call_twist.srv;/home/sirius/ws/jrc_ws/jrc_ws/src/jrc_srvs/srv/grasp.srv")

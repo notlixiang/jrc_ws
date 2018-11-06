@@ -1,8 +1,0 @@
-prefix=/home/sirius/ws/jrc_ws/jrc_ws/install
-
-Name: ur_msgs
-Description: Description of ur_msgs
-Version: 1.2.1
-Cflags: -I/home/sirius/ws/jrc_ws/jrc_ws/install/include
-Libs: -L/home/sirius/ws/jrc_ws/jrc_ws/install/lib 
-Requires: message_runtime std_msgs
