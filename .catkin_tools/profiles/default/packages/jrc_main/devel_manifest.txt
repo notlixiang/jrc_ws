@@ -1,5 +1,0 @@
-jrc_main
-/home/sirius/ws/jrc_ws/devel/.private/jrc_main/share/jrc_main/cmake/jrc_mainConfig.cmake /home/sirius/ws/jrc_ws/devel/share/jrc_main/cmake/jrc_mainConfig.cmake
-/home/sirius/ws/jrc_ws/devel/.private/jrc_main/share/jrc_main/cmake/jrc_mainConfig-version.cmake /home/sirius/ws/jrc_ws/devel/share/jrc_main/cmake/jrc_mainConfig-version.cmake
-/home/sirius/ws/jrc_ws/devel/.private/jrc_main/lib/pkgconfig/jrc_main.pc /home/sirius/ws/jrc_ws/devel/lib/pkgconfig/jrc_main.pc
-/home/sirius/ws/jrc_ws/devel/.private/jrc_main/lib/jrc_main/jrc_main_node /home/sirius/ws/jrc_ws/devel/lib/jrc_main/jrc_main_node

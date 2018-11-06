@@ -1,9 +1,0 @@
-/home/sirius/ws/jrc_ws/build/catkin_tools_prebuild
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/setup.bash /home/sirius/ws/jrc_ws/devel/./setup.bash
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/env.sh /home/sirius/ws/jrc_ws/devel/./env.sh
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/setup.zsh /home/sirius/ws/jrc_ws/devel/./setup.zsh
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/_setup_util.py /home/sirius/ws/jrc_ws/devel/./_setup_util.py
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/setup.sh /home/sirius/ws/jrc_ws/devel/./setup.sh
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake /home/sirius/ws/jrc_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake /home/sirius/ws/jrc_ws/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
-/home/sirius/ws/jrc_ws/devel/.private/catkin_tools_prebuild/lib/pkgconfig/catkin_tools_prebuild.pc /home/sirius/ws/jrc_ws/devel/lib/pkgconfig/catkin_tools_prebuild.pc

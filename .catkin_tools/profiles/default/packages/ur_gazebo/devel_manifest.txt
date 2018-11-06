@@ -1,4 +1,0 @@
-universal_robot/ur_gazebo
-/home/sirius/ws/jrc_ws/devel/.private/ur_gazebo/share/ur_gazebo/cmake/ur_gazeboConfig-version.cmake /home/sirius/ws/jrc_ws/devel/share/ur_gazebo/cmake/ur_gazeboConfig-version.cmake
-/home/sirius/ws/jrc_ws/devel/.private/ur_gazebo/share/ur_gazebo/cmake/ur_gazeboConfig.cmake /home/sirius/ws/jrc_ws/devel/share/ur_gazebo/cmake/ur_gazeboConfig.cmake
-/home/sirius/ws/jrc_ws/devel/.private/ur_gazebo/lib/pkgconfig/ur_gazebo.pc /home/sirius/ws/jrc_ws/devel/lib/pkgconfig/ur_gazebo.pc
