@@ -17,14 +17,14 @@ float thresholdVoltageValue = 0.8;
 float ee_angle = 0;
 int ee_angle_int = 0;
 String inString = "0";
-String stringDwonToUp="ANGLEDTU";
-String stringUpToDwon="ANGLEUTD";
-String stringSucked="SUCKED";
-String outString = stringDwonToUp+inString+stringDwonToUp;
+String stringDwonToUp = "ANGLEDTU";
+String stringUpToDwon = "ANGLEUTD";
+String stringSucked = "SUCKED";
+String outString = stringDwonToUp + inString + stringDwonToUp;
 
 //true 1
 //false 0
-int sucked=0;
+int sucked = 0;
 
 void setup()
 {
@@ -43,37 +43,37 @@ void loop()
     //吸上了
     //digitalWrite(outPin, HIGH);
     //    Serial.print("吸上了\n");
-    sucked=1;
+    sucked = 1;
   } else
   {
     //没有吸上
     //digitalWrite(outPin, LOW);
     //    Serial.print("没有吸上\n");
-    sucked=0;
+    sucked = 0;
   }
-  char inChar='\n';
+  char inChar = '\n';
   while (Serial.available() > 0) {
     inChar = Serial.read();
 
-      // convert the incoming byte to a char
-      // and add it to the string:
-      inString += (char)inChar;
+    // convert the incoming byte to a char
+    // and add it to the string:
+    inString += (char)inChar;
   }
-    
-      sscanf(inString.c_str(), "ANGLEUTD%dANGLEUTD", &ee_angle_int);           
-      ee_angle = ee_angle_int/ 10;
-      myservo.write(ee_angle/1.0);
-      outString="";
-      outString+=stringDwonToUp;
-      char temp_str[20];
-      outString+=itoa((int)myservo.read()*10*1.0,temp_str,10);
-      outString+=stringDwonToUp;
-      outString+=stringSucked;
-      outString+=itoa((int)sucked,temp_str,10);
-      outString+=stringSucked;      
-      inString = "";
-    
-  
-      Serial.println(outString);
+
+  sscanf(inString.c_str(), "ANGLEUTD%dANGLEUTD", &ee_angle_int);
+  ee_angle = ee_angle_int / 10;
+  myservo.write(ee_angle / 1.0);
+  outString = "";
+  outString += stringDwonToUp;
+  char temp_str[20];
+  outString += itoa((int)myservo.read() * 10 * 1.0, temp_str, 10);
+  outString += stringDwonToUp;
+  outString += stringSucked;
+  outString += itoa((int)sucked, temp_str, 10);
+  outString += stringSucked;
+  inString = "";
+
+
+  Serial.println(outString);
   delay(100);
 }
