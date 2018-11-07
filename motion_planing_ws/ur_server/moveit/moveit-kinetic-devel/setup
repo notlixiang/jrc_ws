@@ -1,6 +1,0 @@
-moveit_setup_assistant-kinetic-devel/src/widgets/configuration_files_widget.cpp
-moveit_planners/ompl/ompl_interface/src/model_based_planning_context.cpp
-moveit_planners/ompl/ompl_interface/src/planning_context_manager.cpp
-moveit_planners/sbpl/core/sbpl_interface/src/sbpl_interface.cpp
-moveit_core/planning_request_adapter/src/planning_request_adapter.cpp
-moveit_ros/benchmarks/include/moveit/benchmarks/BenchmarkExecutor.h
