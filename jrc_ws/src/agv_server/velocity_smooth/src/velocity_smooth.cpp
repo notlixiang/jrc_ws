@@ -7,8 +7,8 @@
 #include <tf/transform_listener.h>
 #include <tf/transform_datatypes.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
-#include <velocity_smooth/smooth_srv.h>
-#include <velocity_smooth/smooth_srv_multi.h>
+#include <jrc_srvs/smooth.h>
+#include <jrc_srvs/smooth_multi.h>
 
 using namespace std;
 
@@ -107,8 +107,8 @@ public:
         //ROS_INFO("the robot pose");
     }
 
-    bool move_to_target(velocity_smooth::smooth_srv::Request &req,
-                           velocity_smooth::smooth_srv::Response &res)
+    bool move_to_target(jrc_srvs::smooth::Request &req,
+                           jrc_srvs::smooth::Response &res)
        {   cmd_vel_pub.publish(geometry_msgs::Twist());
        	theta = req.theta - initial_angle_;
        	x=req.x-initial_x_;

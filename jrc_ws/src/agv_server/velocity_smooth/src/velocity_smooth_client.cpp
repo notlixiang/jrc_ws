@@ -1,6 +1,6 @@
 #include <ros/ros.h>
-#include <velocity_smooth/smooth_srv.h>
-#include <velocity_smooth/smooth_srv_multi.h>
+#include <jrc_srvs/smooth.h>
+#include <jrc_srvs/smooth_multi.h>
 #include <tf/transform_listener.h>
 #include <tf/transform_datatypes.h>
 #include <geometry_msgs/Pose.h>
@@ -50,7 +50,7 @@ point[3].orientation.w = 0.749;
 
 
 
-void get_srv(velocity_smooth::smooth_srv& srv, geometry_msgs::Pose& point)
+void get_srv(jrc_srvs::smooth& srv, geometry_msgs::Pose& point)
 {
     geometry_msgs::Quaternion quat1;
     quat1.x = point.orientation.x;
@@ -63,7 +63,7 @@ void get_srv(velocity_smooth::smooth_srv& srv, geometry_msgs::Pose& point)
     srv.request.theta = tf::getYaw(quat1);
 }
 
-void get_srv_multi(velocity_smooth::smooth_srv_multi& srv_multi, std::vector<geometry_msgs::Pose> & points)
+void get_srv_multi(jrc_srvs::smooth_multi& srv_multi, std::vector<geometry_msgs::Pose> & points)
 {
   // int size;
  //  size=points.size();
@@ -87,8 +87,8 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv, "velocity_smooth_client");
     ros::NodeHandle node;
-    ros::ServiceClient client = node.serviceClient<velocity_smooth::smooth_srv>("/Jrc_move"); 
-    velocity_smooth::smooth_srv srv;
+    ros::ServiceClient client = node.serviceClient<jrc_srvs::smooth>("/Jrc_move"); 
+    jrc_srvs::smooth srv;
     get_point_parameter();
     get_srv(srv, point[1]);
     //**********************************multiple poins exist***********************************//
