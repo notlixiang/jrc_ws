@@ -60,3 +60,6 @@ cmake-build-debug/*
 .ipynb_checkpoints
 *.ipynb
 
+
+venv/
+venv/*
