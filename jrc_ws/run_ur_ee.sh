@@ -19,7 +19,7 @@ echo "Start ROS nodes..."
 
 
 echo "twist_service"
-rosrun ur_ee_service ur_ee_service_node
+rosrun ur_ee_server ur_ee_server_node
 
 
 

@@ -138,19 +138,25 @@ int main(int argc, char **argv) {
     int sucked = 0;
 
     int ee_angle_int = 0;
+bool serialflag=true;
     while (ros::ok()) {
+if(serialflag)
+{
         ROS_INFO("%s", ser.available() ? "available" : "not available");
         std::string datastr = ser.read(ser.available());
         sscanf(datastr.data(), "ANGLEDTU%dANGLEDTUSUCKED%dSUCKED", &ee_angle_int, &sucked);
+ROS_INFO("%s",datastr.data());
         ur_grasped=(bool)sucked;
         ee_angle = ee_angle_int / 10;
 
         twist_angle_msg.data = ee_angle;
         twist_angle_pub.publish(twist_angle_msg);
-
+}
+serialflag=!serialflag;
         string stringSend;
         char charSend[50];
         sprintf(charSend, "ANGLEUTD%dANGLEUTD\n\r", (int) (ee_angle_send * 10));
+
         ROS_INFO("%s", charSend);
         stringSend = charSend;
         ser.write(stringSend);
