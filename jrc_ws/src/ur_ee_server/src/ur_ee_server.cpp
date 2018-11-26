@@ -77,7 +77,7 @@ bool call_ur_grasp(jrc_srvs::call_grasp::Request &req,
     int state = req.grasp ? 0 : 1;
 
     srv.request.fun = (int8_t) 1;
-    srv.request.pin = (int8_t) 16;
+    srv.request.pin = (int8_t) 0;
     srv.request.state = state;
     if (client.call(srv)) {
         ROS_INFO("Called ur io. fun %d pin %d state %f", srv.request.fun,
