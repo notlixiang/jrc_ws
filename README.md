@@ -1,11 +1,8 @@
 ## Prerequist:
 1. Ubutnu 1604
 2. ROS Kinetic Kame
-3. ros-kinetic-cv-bridge  
-    `sudo apt-get install ros-kinetic-cv-bridge`
-4. ros-kinetic-serial
-    `sudo apt-get install ros-kinetic-serial`
-5. librealsense2
+
+3. librealsense2
     ```  
     // follow instruction:  
     // https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
@@ -16,9 +13,15 @@
     sudo apt-get install librealsense2-dev
     //  Wait Until Finished
     ```  
-    
-## Notice
-- 2018.11.06    Motion Planing部分需要单独catkin build， 与主工程分开， jrc_ws内部架构不变 （孙明静）
+4. others   
+    ```  
+    chmod +x install_dep_for_all.sh   
+    ./install_dep_for_all.sh  
+    ```  
+
+## Change Log  
+- 2018.11.06       Motion Planing部分需要单独catkin build， 与主工程分开， jrc_ws内部架构不变 （孙明静）
+- 2018.11.07 19:44 成功汇入： 运动规划模块:`motion_planning_ws`（孙明静）， 末端执行器模块:`ur_ee_server`（李想）， AGV模块:`agv_server`（陈斌斌）
 
 ## Developer
 agv_server: 黄先群，陈斌斌， 苗浩原；  

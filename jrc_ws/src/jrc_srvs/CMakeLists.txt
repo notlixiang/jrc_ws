@@ -19,10 +19,20 @@ add_service_files(
     ### 所有的 .srv 文件
     reco.srv
     pose.srv
-    rgbd.srv
-    call_grasp.srv
+    
+    # for camera
+    rgbd.srv  
+    
+     # for end effector
+    call_grasp.srv 
     call_twist.srv
+    
+    # for motion planning
 	grasp.srv
+	
+	# for agv
+	smooth.srv
+	smooth_multi.srv
 
 )
 
