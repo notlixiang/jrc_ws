@@ -14,6 +14,7 @@
 
 #include "jrc_srvs/call_twist.h"
 #include "jrc_srvs/call_grasp.h"
+#include "jrc_srvs/call_grasp_state.h"
 
 #define USHORT unsigned short int
 #define BYTE unsigned char
@@ -96,6 +97,21 @@ bool call_ur_grasp(jrc_srvs::call_grasp::Request &req,
 }
 
 
+bool call_ur_grasp_state(jrc_srvs::call_grasp_state::Request &req,
+                         jrc_srvs::call_grasp_state::Response &res) {
+//  ros::NodeHandle n;
+
+//  ROS_INFO("%s",ser.available()?"available":"not available");
+    if (1) {
+        res.grasped = ur_grasped;
+        ROS_INFO("Return grasp_state %s", ur_grasped ? "true" : "false");
+    } else {
+        ROS_ERROR("Serial unavailable!");
+        return -1;
+    }
+    return true;
+}
+
 int main(int argc, char **argv) {
     try {
         ser.setPort("/dev/ttyACM0");
@@ -119,7 +135,9 @@ int main(int argc, char **argv) {
     ros::ServiceServer service_twist = nh.advertiseService("call_twist", call_ur_twist);
     ROS_INFO("Ready to twist.");
     ros::ServiceServer service_grasp = nh.advertiseService("call_grasp", call_ur_grasp);
+    ros::ServiceServer service_grasp_state = nh.advertiseService("call_grasp_state", call_ur_grasp_state);
     ROS_INFO("Ready to grasp.");
+
 
     ros::Rate loop_rate(10);
     ros::NodeHandle n;
@@ -138,21 +156,20 @@ int main(int argc, char **argv) {
     int sucked = 0;
 
     int ee_angle_int = 0;
-bool serialflag=true;
+    bool serialflag = true;
     while (ros::ok()) {
-if(serialflag)
-{
-        ROS_INFO("%s", ser.available() ? "available" : "not available");
-        std::string datastr = ser.read(ser.available());
-        sscanf(datastr.data(), "ANGLEDTU%dANGLEDTUSUCKED%dSUCKED", &ee_angle_int, &sucked);
-ROS_INFO("%s",datastr.data());
-        ur_grasped=(bool)sucked;
-        ee_angle = ee_angle_int / 10;
+        if (serialflag) {
+            ROS_INFO("%s", ser.available() ? "available" : "not available");
+            std::string datastr = ser.read(ser.available());
+            sscanf(datastr.data(), "ANGLEDTU%dANGLEDTUSUCKED%dSUCKED", &ee_angle_int, &sucked);
+            ROS_INFO("%s", datastr.data());
+            ur_grasped = (bool) sucked;
+            ee_angle = ee_angle_int / 10;
 
-        twist_angle_msg.data = ee_angle;
-        twist_angle_pub.publish(twist_angle_msg);
-}
-serialflag=!serialflag;
+            twist_angle_msg.data = ee_angle;
+            twist_angle_pub.publish(twist_angle_msg);
+        }
+        serialflag = !serialflag;
         string stringSend;
         char charSend[50];
         sprintf(charSend, "ANGLEUTD%dANGLEUTD\n\r", (int) (ee_angle_send * 10));

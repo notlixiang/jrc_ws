@@ -26,7 +26,7 @@ add_service_files(
      # for end effector
     call_grasp.srv 
     call_twist.srv
-    
+		call_grasp_state.srv
     # for motion planning
 	grasp.srv
 	
