@@ -20,6 +20,7 @@ String inString = "0";
 String stringDwonToUp = "ANGLEDTU";
 String stringUpToDwon = "ANGLEUTD";
 String stringSucked = "SUCKED";
+String stringOver = "OVER";
 String outString = stringDwonToUp + inString + stringDwonToUp;
 
 //true 1
@@ -63,7 +64,7 @@ if(serialflag)
     // and add it to the string:
     inString += (char)inChar;
   }
-  sscanf(inString.c_str(), "ANGLEUTD%dANGLEUTD", &ee_angle_int);
+  sscanf(inString.c_str(), "%*s\nANGLEUTD%dANGLEUTD", &ee_angle_int);
   ee_angle = ee_angle_int / 10;
   myservo.write(ee_angle / 1.0);
 }
@@ -74,10 +75,10 @@ serialflag=!serialflag;
   char temp_str[20];
   //outString += itoa((int)myservo.read() * 10 * 1.0, temp_str, 10);  
   outString += itoa((int)ee_angle_int, temp_str, 10);
-  outString += stringDwonToUp;
+  //outString += stringDwonToUp;
   outString += stringSucked;
   outString += itoa((int)sucked, temp_str, 10);
-  outString += stringSucked;
+  outString += stringOver;
   inString = "";
 
 
