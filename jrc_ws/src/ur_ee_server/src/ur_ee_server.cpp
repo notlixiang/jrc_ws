@@ -157,12 +157,22 @@ int main(int argc, char **argv) {
 
     int ee_angle_int = 0;
     bool serialflag = true;
+std::string datastr="";
+datastr.clear();
     while (ros::ok()) {
         if (serialflag) {
             ROS_INFO("%s", ser.available() ? "available" : "not available");
-            std::string datastr = ser.read(ser.available());
-            sscanf(datastr.data(), "ANGLEDTU%dANGLEDTUSUCKED%dSUCKED", &ee_angle_int, &sucked);
+            datastr += ser.read(ser.available());
             ROS_INFO("%s", datastr.data());
+
+            int success_num_read=sscanf(datastr.data(), "%*s\nANGLEDTU%dSUCKED%dOVER", &ee_angle_int, &sucked);
+// if(success_num_read==2)
+// {
+datastr.clear();
+// }
+
+            
+ROS_INFO("success_num_read %d", success_num_read);
             ur_grasped = (bool) sucked;
             ee_angle = ee_angle_int / 10;
 
