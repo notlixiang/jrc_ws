@@ -163,7 +163,7 @@ datastr.clear();
         if (serialflag) {
             ROS_INFO("%s", ser.available() ? "available" : "not available");
             datastr += ser.read(ser.available());
-            ROS_INFO("%s", datastr.data());
+            // ROS_INFO("%s", datastr.data());
 
             int success_num_read=sscanf(datastr.data(), "%*s\nANGLEDTU%dSUCKED%dOVER", &ee_angle_int, &sucked);
 // if(success_num_read==2)
@@ -172,7 +172,7 @@ datastr.clear();
 // }
 
             
-ROS_INFO("success_num_read %d", success_num_read);
+// ROS_INFO("success_num_read %d", success_num_read);
             ur_grasped = (bool) sucked;
             ee_angle = ee_angle_int / 10;
 
