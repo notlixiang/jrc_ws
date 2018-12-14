@@ -12,27 +12,44 @@ else()
     message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
+############### dependencies ######################
+# 添加cmake模块
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
+#PCL
+find_package(PCL REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+#Opencv
+find_package(OpenCV 3 REQUIRED )
+include_directories(${OpenCV_INCLUDE_DIRS})
+link_directories(${OpenCV_LIBRARY_DIR})
+#ros
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  sensor_msgs
   cv_bridge
   image_transport
-  tf
+  roscpp
+  rospy
+  sensor_msgs
+  std_msgs
   jrc_srvs
+  tf
 )
+catkin_package()
+include_directories(${catkin_INCLUDE_DIRS})
+#self file
+include_directories(../../devel/include)
+include_directories(include/camera_driver)
+# include_directories(include)
+include_directories( ${PROJECT_SOURCE_DIR}/include )
+#realsense
+find_package(realsense2 REQUIRED)
+include_directories(${realsense_INCLUDE_DIR})
 
 # MUST use OpenCV in ROS !
 # the original OpenCV at /usr/local/share/OpenCV do not include the Aruco modules 
 # this line shoudld be default if you have successfully installed ROS, and sourced your workspace.
 SET(OpenCV_DIR /opt/ros/kinetic/share/OpenCV-3.3.1-dev)
 SET(realsense2_DIR /usr/lib/x86_64-linux-gnu/cmake/realsense2)
-
-
-find_package(OpenCV 3 REQUIRED)
-find_package(realsense2 REQUIRED)
-find_package(PCL REQUIRED)
 
 message(STATUS "########################  OpenCV library status ###############################" )
 message(STATUS "                     version: ${OpenCV_VERSION}")
@@ -44,37 +61,16 @@ message(STATUS "                     version: ${realsense_VERSION_MAJOR}")
 message(STATUS "                     include path: ${realsense_INCLUDE_DIR}")
 message(STATUS "                     libraries: ${realsense2_LIBRARY}")
 
-
-catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES realsense_driver
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
-)
-
-###########
-## Build ##
-###########
-
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
-
-include_directories(${OpenCV_INCLUDE_DIRS})
-include_directories(${PCL_INCLUDE_DIRS})
-include_directories(${realsense_INCLUDE_DIR})
-
-
-link_directories(${OpenCV_LIBRARY_DIR})
-link_directories(${PCL_LIBRARY_DIRS})
-
-# add_definitions(${PCL_DEFINITIONS})
-
+############### execute ######################
+add_executable(kinect_driver src/kinect_driver.cpp src/OpenNI2Interface.cpp)
+add_executable(kinect_server src/kinect_server.cpp)
 add_executable(realsense2_driver src/realsense2_driver.cpp)
 add_executable(realsense2_server src/realsense2_server.cpp)
 
 add_dependencies(realsense2_driver jrc_srvs_gencpp)
 add_dependencies(realsense2_server jrc_srvs_gencpp)
+add_dependencies(kinect_driver jrc_srvs_gencpp)
+add_dependencies(kinect_server jrc_srvs_gencpp)
 
 target_link_libraries(realsense2_driver
    ${catkin_LIBRARIES}
@@ -85,6 +81,18 @@ target_link_libraries(realsense2_driver
 )
 target_link_libraries(realsense2_server
    ${catkin_LIBRARIES}
+   ${OpenCV_LIBS}
+   ${PCL_LIBRARIES}
+)
+target_link_libraries(kinect_driver
+   ${catkin_LIBRARIES}
+   ${OPENNI2_LIBRARY}
+   ${OpenCV_LIBS}
+   ${PCL_LIBRARIES}
+)
+target_link_libraries(kinect_server
+   ${catkin_LIBRARIES}
+   ${OPENNI2_LIBRARY}
    ${OpenCV_LIBS}
    ${PCL_LIBRARIES}
 )

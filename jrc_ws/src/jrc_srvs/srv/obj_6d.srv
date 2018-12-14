@@ -1,0 +1,9 @@
+bool start
+int32 label
+int32 xmin
+int32 ymin
+int32 xmax
+int32 ymax
+---
+int32 label
+geometry_msgs/Pose obj_pose

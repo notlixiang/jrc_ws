@@ -1,0 +1,5 @@
+float64[] positions
+bool use_time
+float64   time
+---
+bool result

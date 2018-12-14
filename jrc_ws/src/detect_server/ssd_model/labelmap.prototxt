@@ -1,0 +1,85 @@
+item {
+  name: "1"
+  label: 1
+  display_name: "leshi"
+}
+item {
+  name: "2"
+  label: 2
+  display_name: "milk"
+}
+item {
+  name: "3"
+  label: 3
+  display_name: "zhencui"
+}
+item {
+  name: "4"
+  label: 4
+  display_name: "yagao"
+}
+item {
+  name: "5"
+  label: 5
+  display_name: "coke"
+}
+item {
+  name: "6"
+  label: 6
+  display_name: "gaipian"
+}
+item {
+  name: "7"
+  label: 7
+  display_name: "juzi"
+}
+item {
+  name: "8"
+  label: 8
+  display_name: "yajiao"
+}
+item {
+  name: "9"
+  label: 9
+  display_name: "taiping"
+}
+item {
+  name: "10"
+  label: 10
+  display_name: "zhijin"
+}
+item {
+  name: "11"
+  label: 11
+  display_name: "book"
+}
+item {
+  name: "12"
+  label: 12
+  display_name: "aoliao"
+}
+item {
+  name: "13"
+  label: 13
+  display_name: "guozhen"
+}
+item {
+  name: "14"
+  label: 14
+  display_name: "xifalu"
+}
+item {
+  name: "15"
+  label: 15
+  display_name: "xiangchang"
+}
+item {
+  name: "16"
+  label: 16
+  display_name: "yashua"
+}
+item {
+  name: "background"
+  label: 0
+  display_name: "background"
+}

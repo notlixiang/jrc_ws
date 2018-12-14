@@ -1,0 +1,12 @@
+*.zip
+
+
+build/
+devel/
+logs/
+*-build/
+.catkin_tools/
+
+
+CMakeLists.txt.user
+.catkin_workspace

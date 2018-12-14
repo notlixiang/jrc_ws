@@ -16,23 +16,22 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_service_files(
     FILES
-    ### 所有的 .srv 文件
-    reco.srv
-    pose.srv
-    
     # for camera
-    rgbd.srv  
-    
-     # for end effector
+    rgbd.srv
+    rgbd_image.srv  
+    #for detection
+    bbox_msgs.srv
+    #for pose
+    obj_6d.srv
+    # for end effector
     call_grasp.srv 
     call_twist.srv
-    
+    call_grasp_state.srv
     # for motion planning
-	grasp.srv
-	
-	# for agv
-	smooth.srv
-	smooth_multi.srv
+    grasp.srv
+    # for agv
+    smooth.srv
+    smooth_multi.srv
 
 )
 

@@ -1,0 +1,8 @@
+<launch>
+  <param name="robot_description" textfile="$(find ur_description)/urdf/ur10_robot_huojia.urdf" />
+  <!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />  -->
+
+  <!--<node pkg="tf" type="static_transform_publisher" name="camera_pub" args="0.13297 0.12161 0  0.69636 0.12283 0.69635 -0.12284    /ee_link /camera_link 100"/>-->
+
+  <!-- <node name="rviz" pkg="rviz" type="rviz" />  -->
+</launch>

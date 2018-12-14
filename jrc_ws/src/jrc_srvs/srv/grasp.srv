@@ -4,3 +4,4 @@ int64 id
 geometry_msgs/Pose pose
 ---
 std_msgs/Bool result
+int64 fail_status 
